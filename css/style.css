@@ -203,24 +203,36 @@ button{ font: inherit; background: none; border: none; cursor: pointer; }
 }
 
 .hero-inner{ position: relative; z-index: 1; padding: 60px 24px; margin: 0 auto; }
-.hero-grid{ display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; text-align: center; }
-.eyebrow{
-  text-transform: uppercase; letter-spacing: .16em; font-size: .85rem; font-weight: 600;
-  color: var(--burgundy); margin-bottom: 22px;
+
+/* Mobile-first order: headline, then the food photos immediately (so a
+   phone visitor sees the treats before any button), then CTAs, then the
+   longer descriptive paragraph. Desktop uses a two-column layout instead
+   (text column left, photo collage right) via named areas below. */
+.hero-grid{
+  display: grid; grid-template-columns: 1fr; align-items: center; text-align: center;
+  grid-template-areas: "eyebrow" "h1" "photos" "actions" "lede";
+  row-gap: 28px;
 }
-.hero h1{
-  font-size: clamp(2.6rem, 6.4vw, 5rem); line-height: 1.05; color: var(--espresso);
-}
+.eyebrow{ grid-area: eyebrow; text-transform: uppercase; letter-spacing: .16em; font-size: .85rem; font-weight: 600; color: var(--burgundy); margin: 0; }
+.hero h1{ grid-area: h1; font-size: clamp(2.6rem, 6.4vw, 5rem); line-height: 1.05; color: var(--espresso); margin: 0; }
 .hero h1 span{ color: var(--burgundy); font-style: italic; font-weight: 500; }
 .hero-lede{
-  max-width: 620px; margin: 28px auto 0; font-size: clamp(1.05rem, 1.6vw, 1.25rem); color: var(--ink-soft);
+  grid-area: lede; max-width: 620px; margin: 0 auto; font-size: clamp(1.05rem, 1.6vw, 1.25rem); color: var(--ink-soft);
 }
-.hero-actions{ justify-content: center; }
+.hero-actions{ grid-area: actions; justify-content: center; margin: 0; }
+.hero-photos{ grid-area: photos; }
 
 @media (min-width: 901px){
-  .hero-grid{ grid-template-columns: 1.05fr .95fr; gap: 40px; text-align: left; }
-  .hero-text .hero-lede{ margin-left: 0; margin-right: 0; }
-  .hero-text .hero-actions{ justify-content: flex-start; }
+  .hero-grid{
+    grid-template-columns: 1.05fr .95fr; column-gap: 40px; row-gap: 22px; text-align: left;
+    grid-template-areas:
+      "eyebrow photos"
+      "h1      photos"
+      "lede    photos"
+      "actions photos";
+  }
+  .hero-lede{ margin-left: 0; margin-right: 0; }
+  .hero-actions{ justify-content: flex-start; }
 }
 
 .scroll-cue{
@@ -305,7 +317,7 @@ button{ font: inherit; background: none; border: none; cursor: pointer; }
 .hero-photo-accent{ animation-name: heroPhotoFloatAccent; }
 @keyframes heroPhotoFloatAccent{ 0%,100%{ transform: rotate(-6deg) translateY(0); } 50%{ transform: rotate(-6deg) translateY(10px); } }
 @media (max-width: 900px){
-  .hero-photos{ max-width: 300px; margin-top: 40px; }
+  .hero-photos{ max-width: 300px; }
 }
 
 /* menu list (kleine Gerichte) */
