@@ -1,0 +1,13 @@
+{
+  "name": "cafe-schlosser-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Responsive Design-Demo für Café & Konditorei Schlosser, Speyer.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
