@@ -82,40 +82,34 @@
         </svg>
       </div>
 
-      <div class="float-item item-scoop" style="--d:2.1s">
-        <svg viewBox="0 0 120 120" width="100%" height="100%">
-          <circle cx="55" cy="42" r="24" fill="var(--gold-light)"/>
-          <circle cx="66" cy="66" r="22" fill="var(--burgundy)"/>
-          <path d="M44 78 L64 78 L58 108 Q54 114 50 108Z" fill="var(--espresso)" opacity=".85"/>
-        </svg>
-      </div>
-
-      <div class="float-item item-waffle" style="--d:.7s">
-        <svg viewBox="0 0 120 120" width="100%" height="100%">
-          <circle cx="60" cy="60" r="34" fill="var(--gold)"/>
-          <g fill="none" stroke="var(--cream)" stroke-width="2" opacity=".55">
-            <circle cx="60" cy="60" r="26"/><circle cx="60" cy="60" r="17"/><circle cx="60" cy="60" r="8"/>
-          </g>
-          <circle cx="46" cy="46" r="4" fill="var(--burgundy)"/>
-          <circle cx="74" cy="50" r="3.5" fill="var(--cream)"/>
-          <circle cx="70" cy="74" r="4" fill="var(--burgundy)"/>
-        </svg>
-      </div>
     </div>
 
     <div class="wrap hero-inner">
-      <p class="eyebrow reveal">Café &amp; Konditorei Schlosser</p>
-      <h1 class="reveal">Genuss seit 1954<br><span>mitten in Speyer.</span></h1>
-      <p class="hero-lede reveal">
-        Hausgemachte Kuchen und Torten, Frühstück, Bubblewaffeln, Eisbecher und Kaffeespezialitäten –
-        seit drei Generationen in Familienhand, nur wenige Schritte vom Dom entfernt.
-      </p>
-      <div class="hero-actions reveal">
-        <a href="#genusswelt" class="btn btn-primary">
-          Unsere Genusswelt entdecken
-          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m0 0l-6-6m6 6l6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#besuch" class="btn btn-ghost">Tisch reservieren</a>
+      <div class="hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow reveal">Café &amp; Konditorei Schlosser</p>
+          <h1 class="reveal">Genuss seit 1954<br><span>mitten in Speyer.</span></h1>
+          <p class="hero-lede reveal">
+            Hausgemachte Kuchen und Torten, Frühstück, Bubblewaffeln, Eisbecher und Kaffeespezialitäten –
+            seit drei Generationen in Familienhand, nur wenige Schritte vom Dom entfernt.
+          </p>
+          <div class="hero-actions reveal">
+            <a href="#genusswelt" class="btn btn-primary">
+              Unsere Genusswelt entdecken
+              <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m0 0l-6-6m6 6l6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#besuch" class="btn btn-ghost">Tisch reservieren</a>
+          </div>
+        </div>
+
+        <div class="hero-photos reveal">
+          <div class="hero-photo-main">
+            <img src="assets/photos/bubblewaffel.webp" alt="Schlosser's Bubblewaffel mit frischen Erdbeeren und Sahne" width="900" height="1125" loading="eager">
+          </div>
+          <div class="hero-photo-accent">
+            <img src="assets/photos/fruehstueck.webp" alt="Frühstück auf der Terrasse mit Blick auf den Speyerer Dom" width="900" height="1200" loading="eager">
+          </div>
+        </div>
       </div>
     </div>
 
@@ -186,23 +180,9 @@
   <!-- ============ FRÜHSTÜCK ============ -->
   <section class="split-section" id="fruehstueck">
     <div class="wrap split-inner">
-      <div class="split-visual reveal" aria-hidden="true">
+      <div class="split-visual reveal">
         <div class="visual-card visual-fruehstueck">
-          <svg viewBox="0 0 320 320" width="100%" height="100%">
-            <circle cx="160" cy="160" r="150" fill="var(--cream-dark)"/>
-            <ellipse cx="160" cy="235" rx="120" ry="16" fill="var(--espresso)" opacity=".08"/>
-            <circle cx="130" cy="150" r="70" fill="#fff"/>
-            <circle cx="130" cy="150" r="70" fill="none" stroke="var(--gold)" stroke-width="4"/>
-            <circle cx="112" cy="138" r="16" fill="var(--gold-light)"/>
-            <circle cx="150" cy="132" r="10" fill="var(--gold-light)"/>
-            <rect x="98" y="158" width="64" height="14" rx="7" fill="var(--burgundy)" opacity=".85"/>
-            <circle cx="228" cy="120" r="34" fill="var(--burgundy)"/>
-            <rect x="212" y="98" width="32" height="8" rx="4" fill="var(--gold-light)"/>
-            <path d="M96 216c30-14 100-14 130 0" fill="none" stroke="var(--gold)" stroke-width="4" stroke-linecap="round"/>
-            <circle cx="110" cy="222" r="6" fill="var(--gold)"/>
-            <circle cx="200" cy="224" r="6" fill="var(--burgundy)"/>
-            <circle cx="160" cy="230" r="6" fill="var(--gold-light)"/>
-          </svg>
+          <img src="assets/photos/fruehstueck.webp" alt="Frühstücksteller mit Speck, Spiegeleiern und Croissant auf der Terrasse, im Hintergrund der Speyerer Dom" width="900" height="1200" loading="lazy">
         </div>
       </div>
       <div class="split-text">
@@ -266,27 +246,19 @@
         </article>
 
         <article class="cake-card reveal" style="--i:2">
-          <div class="cake-art" aria-hidden="true">
-            <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="92" fill="var(--cream)"/>
-              <path d="M42 132 L48 76 Q100 52 152 76 L158 132 Q100 158 42 132Z" fill="var(--espresso)"/>
-              <path d="M48 76 Q100 52 152 76 L155 92 Q100 110 45 92Z" fill="var(--gold-light)"/>
-              <path d="M45 92 Q100 110 155 92 L157 108 Q100 126 43 108Z" fill="var(--espresso)"/>
-            </svg>
+          <div class="cake-art">
+            <img src="assets/photos/torte.webp" alt="Torte mit Baiserhaube und roter Beerenfüllung aus der Konditorei-Vitrine" width="1000" height="784" loading="lazy">
           </div>
           <h3>Cremetorten</h3>
           <p>Zartschmelzende Cremeschichten für echte Genießer.</p>
         </article>
 
         <article class="cake-card reveal" style="--i:3">
-          <div class="cake-art" aria-hidden="true">
-            <svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="92" fill="var(--cream)"/>
-              <path d="M44 126 L50 84 Q100 62 150 84 L156 126 Q100 150 44 126Z" fill="var(--gold-light)"/>
-              <circle cx="80" cy="94" r="5" fill="var(--burgundy)"/><circle cx="100" cy="88" r="5" fill="var(--gold)"/><circle cx="120" cy="94" r="5" fill="var(--burgundy)"/>
-              <path d="M60 132q40 16 80 0" fill="none" stroke="var(--burgundy)" stroke-width="3" stroke-linecap="round"/>
-            </svg>
+          <div class="cake-art">
+            <img src="assets/photos/empfehlung.webp" alt="Drei Stück Rhabarbertorte: mit Baiser, Streusel und Sandteig" width="1000" height="995" loading="lazy">
           </div>
-          <h3>Saisonale Kreationen</h3>
-          <p>Wechselnde Auswahl passend zur Jahreszeit – immer eine Überraschung wert.</p>
+          <h3>Saisonale Kreationen <span class="cake-badge">Jetzt: Rhabarber</span></h3>
+          <p>Wir haben die Rhabarber-Saison eröffnet – bei uns in drei Varianten: als Baiser, Streusel oder Sand.</p>
         </article>
       </div>
 
@@ -344,21 +316,9 @@
         </div>
       </div>
 
-      <div class="split-visual reveal" aria-hidden="true">
+      <div class="split-visual reveal">
         <div class="visual-card visual-mittag">
-          <svg viewBox="0 0 320 320" width="100%" height="100%">
-            <circle cx="160" cy="160" r="150" fill="var(--cream-dark)"/>
-            <circle cx="140" cy="150" r="66" fill="#fff"/>
-            <circle cx="140" cy="150" r="66" fill="none" stroke="var(--burgundy)" stroke-width="3"/>
-            <path d="M100 150a40 40 0 0 1 80 0z" fill="var(--gold)" opacity=".5"/>
-            <circle cx="120" cy="140" r="6" fill="var(--burgundy)"/>
-            <circle cx="150" cy="130" r="6" fill="var(--espresso)"/>
-            <circle cx="165" cy="150" r="6" fill="var(--burgundy)"/>
-            <rect x="210" y="110" width="60" height="60" rx="10" fill="var(--espresso)" opacity=".9"/>
-            <line x1="220" y1="125" x2="260" y2="125" stroke="var(--gold-light)" stroke-width="3"/>
-            <line x1="220" y1="140" x2="255" y2="140" stroke="var(--gold-light)" stroke-width="3"/>
-            <line x1="220" y1="155" x2="248" y2="155" stroke="var(--gold-light)" stroke-width="3"/>
-          </svg>
+          <img src="assets/photos/fkbrot.webp" alt="Frischkäsebrot mit Rührei und Tomate-Mozzarella, dazu ein Glas Wein" width="1000" height="750" loading="lazy">
         </div>
       </div>
     </div>
@@ -399,17 +359,8 @@
         </article>
 
         <article class="ice-card reveal" style="--i:1">
-          <div class="ice-art" aria-hidden="true">
-            <svg viewBox="0 0 220 220">
-              <circle cx="110" cy="110" r="70" fill="var(--gold)"/>
-              <g fill="none" stroke="var(--cream)" stroke-width="3" opacity=".5">
-                <circle cx="110" cy="110" r="54"/><circle cx="110" cy="110" r="36"/><circle cx="110" cy="110" r="18"/>
-              </g>
-              <circle cx="82" cy="86" r="7" fill="var(--burgundy)"/>
-              <circle cx="140" cy="92" r="6" fill="var(--cream)"/>
-              <circle cx="132" cy="134" r="7" fill="var(--burgundy)"/>
-              <circle cx="88" cy="140" r="6" fill="var(--espresso)"/>
-            </svg>
+          <div class="ice-art is-photo">
+            <img src="assets/photos/bubblewaffel.webp" alt="Schlosser's Bubblewaffel mit frischen Erdbeeren und Sahne" width="900" height="1125" loading="lazy">
           </div>
           <h3>Schlosser's Bubblewaffel</h3>
           <p>Frisch gebacken – als Tüte gerollt oder flach, ganz nach Wunsch.</p>

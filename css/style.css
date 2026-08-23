@@ -151,7 +151,7 @@ button{ font: inherit; background: none; border: none; cursor: pointer; }
 .brand-text em{ font-style: normal; font-size: .68rem; letter-spacing: .06em; color: var(--ink-soft); text-transform: uppercase; }
 
 .main-nav ul{ display: flex; align-items: center; gap: 30px; }
-.main-nav a{ font-size: .93rem; font-weight: 600; color: var(--espresso); position: relative; padding: 6px 0; }
+.main-nav a{ font-size: .93rem; font-weight: 600; color: var(--espresso); position: relative; padding: 6px 0; white-space: nowrap; }
 .main-nav a:not(.nav-cta)::after{
   content:""; position: absolute; left: 0; right: 100%; bottom: 0; height: 2px; background: var(--gold);
   transition: right .3s var(--ease);
@@ -188,10 +188,8 @@ button{ font: inherit; background: none; border: none; cursor: pointer; }
   position: absolute; width: 100px; height: 100px;
   animation: float 7s ease-in-out infinite; animation-delay: var(--d, 0s);
 }
-.item-cake{ top: 20%; left: 6%; width: 110px; height: 110px; }
-.item-cup{ top: 62%; left: 12%; width: 90px; height: 90px; }
-.item-scoop{ top: 16%; right: 8%; width: 120px; height: 120px; }
-.item-waffle{ top: 60%; right: 6%; width: 100px; height: 100px; }
+.item-cake{ top: 18%; left: 5%; width: 110px; height: 110px; }
+.item-cup{ top: 66%; left: 9%; width: 90px; height: 90px; }
 @keyframes float{
   0%,100%{ transform: translateY(0) rotate(0deg); }
   50%{ transform: translateY(-18px) rotate(3deg); }
@@ -200,11 +198,12 @@ button{ font: inherit; background: none; border: none; cursor: pointer; }
   .float-item{ opacity: .55; transform: scale(.7); }
 }
 @media (max-width: 640px){
-  .item-cake, .item-scoop{ top: 8%; }
-  .item-cup, .item-waffle{ display: none; }
+  .item-cake{ top: 6%; }
+  .item-cup{ display: none; }
 }
 
-.hero-inner{ position: relative; z-index: 1; text-align: center; padding: 60px 24px; margin: 0 auto; }
+.hero-inner{ position: relative; z-index: 1; padding: 60px 24px; margin: 0 auto; }
+.hero-grid{ display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center; text-align: center; }
 .eyebrow{
   text-transform: uppercase; letter-spacing: .16em; font-size: .85rem; font-weight: 600;
   color: var(--burgundy); margin-bottom: 22px;
@@ -217,6 +216,12 @@ button{ font: inherit; background: none; border: none; cursor: pointer; }
   max-width: 620px; margin: 28px auto 0; font-size: clamp(1.05rem, 1.6vw, 1.25rem); color: var(--ink-soft);
 }
 .hero-actions{ justify-content: center; }
+
+@media (min-width: 901px){
+  .hero-grid{ grid-template-columns: 1.05fr .95fr; gap: 40px; text-align: left; }
+  .hero-text .hero-lede{ margin-left: 0; margin-right: 0; }
+  .hero-text .hero-actions{ justify-content: flex-start; }
+}
 
 .scroll-cue{
   position: absolute; left: 50%; bottom: 34px; transform: translateX(-50%);
@@ -273,7 +278,31 @@ button{ font: inherit; background: none; border: none; cursor: pointer; }
   width: 100%; max-width: 380px; aspect-ratio: 1; border-radius: var(--radius-lg);
   overflow: hidden; box-shadow: var(--shadow-lg); transition: transform .6s var(--ease);
 }
+.visual-card img{ width: 100%; height: 100%; object-fit: cover; display: block; }
 .split-visual:hover .visual-card{ transform: rotate(-1.5deg) scale(1.02); }
+
+/* Hero photo collage */
+.hero-photos{
+  position: relative; z-index: 1; width: 100%; max-width: 380px; aspect-ratio: 4/5; margin: 0 auto;
+}
+.hero-photo-main{
+  position: absolute; inset: 0; border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--shadow-lg); transform: rotate(2deg);
+  animation: heroPhotoFloat 7s ease-in-out infinite;
+}
+.hero-photo-accent{
+  position: absolute; width: 46%; aspect-ratio: 4/5; left: -12%; bottom: -8%;
+  border-radius: var(--radius-md); overflow: hidden; border: 5px solid var(--cream);
+  box-shadow: var(--shadow-lg); transform: rotate(-6deg);
+  animation: heroPhotoFloat 8s ease-in-out infinite reverse;
+}
+.hero-photo-main img, .hero-photo-accent img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+@keyframes heroPhotoFloat{ 0%,100%{ transform: rotate(2deg) translateY(0); } 50%{ transform: rotate(2deg) translateY(-14px); } }
+.hero-photo-accent{ animation-name: heroPhotoFloatAccent; }
+@keyframes heroPhotoFloatAccent{ 0%,100%{ transform: rotate(-6deg) translateY(0); } 50%{ transform: rotate(-6deg) translateY(10px); } }
+@media (max-width: 900px){
+  .hero-photos{ max-width: 300px; margin-top: 40px; }
+}
 
 /* menu list (kleine Gerichte) */
 .menu-list{ margin-top: 32px; display: grid; gap: 28px; }
@@ -307,10 +336,18 @@ button{ font: inherit; background: none; border: none; cursor: pointer; }
   transition-delay: calc(var(--i, 0) * 60ms);
 }
 .cake-card:hover{ transform: translateY(-10px); background: rgba(251,244,232,.1); border-color: var(--gold); }
-.cake-art{ width: 100%; aspect-ratio: 1; margin-bottom: 20px; transition: transform .5s var(--ease); }
+.cake-art{
+  width: 100%; aspect-ratio: 1; margin-bottom: 20px; border-radius: var(--radius-sm);
+  overflow: hidden; transition: transform .5s var(--ease);
+}
+.cake-art img{ width: 100%; height: 100%; object-fit: cover; display: block; }
 .cake-card:hover .cake-art{ transform: scale(1.06) rotate(-2deg); }
-.cake-card h3{ color: var(--cream); font-size: 1.1rem; margin-bottom: 8px; }
+.cake-card h3{ color: var(--cream); font-size: 1.1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .cake-card p{ color: rgba(251,244,232,.72); font-size: .92rem; }
+.cake-badge{
+  display: inline-block; font-size: .64rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+  background: var(--gold); color: var(--espresso-dark); padding: 3px 9px; border-radius: 999px;
+}
 .cake-note{ margin-top: 48px; font-style: italic; color: var(--gold-light); font-size: 1.05rem; }
 
 /* ================= EIS & WAFFELN (playful) ================= */
@@ -339,6 +376,8 @@ button{ font: inherit; background: none; border: none; cursor: pointer; }
 .ice-card:hover{ transform: translateY(-12px) rotate(-1deg); box-shadow: var(--shadow-lg); }
 .ice-art{ width: 100%; max-width: 190px; margin: 0 auto 20px; transition: transform .6s var(--ease); }
 .ice-card:hover .ice-art{ transform: scale(1.08) rotate(4deg); }
+.ice-art.is-photo{ aspect-ratio: 1; border-radius: 50%; overflow: hidden; box-shadow: var(--shadow-sm); }
+.ice-art.is-photo img{ width: 100%; height: 100%; object-fit: cover; display: block; }
 .ice-card h3{ font-size: 1.12rem; margin-bottom: 8px; text-align: center; }
 .ice-card p{ color: var(--ink-soft); font-size: .92rem; text-align: center; }
 
