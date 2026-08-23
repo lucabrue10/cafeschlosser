@@ -277,8 +277,9 @@ button{ font: inherit; background: none; border: none; cursor: pointer; }
 .visual-card{
   width: 100%; max-width: 380px; aspect-ratio: 1; border-radius: var(--radius-lg);
   overflow: hidden; box-shadow: var(--shadow-lg); transition: transform .6s var(--ease);
+  padding: 8px; background: var(--cream); border: 3px solid var(--gold);
 }
-.visual-card img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+.visual-card img{ width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 22px; }
 .split-visual:hover .visual-card{ transform: rotate(-1.5deg) scale(1.02); }
 
 /* Hero photo collage */
@@ -289,14 +290,17 @@ button{ font: inherit; background: none; border: none; cursor: pointer; }
   position: absolute; inset: 0; border-radius: var(--radius-lg); overflow: hidden;
   box-shadow: var(--shadow-lg); transform: rotate(2deg);
   animation: heroPhotoFloat 7s ease-in-out infinite;
+  padding: 8px; background: var(--cream); border: 3px solid var(--gold);
 }
 .hero-photo-accent{
   position: absolute; width: 46%; aspect-ratio: 4/5; left: -12%; bottom: -8%;
-  border-radius: var(--radius-md); overflow: hidden; border: 5px solid var(--cream);
+  border-radius: var(--radius-md); overflow: hidden;
   box-shadow: var(--shadow-lg); transform: rotate(-6deg);
   animation: heroPhotoFloat 8s ease-in-out infinite reverse;
+  padding: 6px; background: var(--cream); border: 3px solid var(--gold);
 }
-.hero-photo-main img, .hero-photo-accent img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero-photo-main img{ width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 22px; }
+.hero-photo-accent img{ width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 14px; }
 @keyframes heroPhotoFloat{ 0%,100%{ transform: rotate(2deg) translateY(0); } 50%{ transform: rotate(2deg) translateY(-14px); } }
 .hero-photo-accent{ animation-name: heroPhotoFloatAccent; }
 @keyframes heroPhotoFloatAccent{ 0%,100%{ transform: rotate(-6deg) translateY(0); } 50%{ transform: rotate(-6deg) translateY(10px); } }
@@ -339,8 +343,9 @@ button{ font: inherit; background: none; border: none; cursor: pointer; }
 .cake-art{
   width: 100%; aspect-ratio: 1; margin-bottom: 20px; border-radius: var(--radius-sm);
   overflow: hidden; transition: transform .5s var(--ease);
+  padding: 6px; background: var(--cream); border: 2px solid var(--gold);
 }
-.cake-art img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+.cake-art img{ width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 8px; }
 .cake-card:hover .cake-art{ transform: scale(1.06) rotate(-2deg); }
 .cake-card h3{ color: var(--cream); font-size: 1.1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .cake-card p{ color: rgba(251,244,232,.72); font-size: .92rem; }
@@ -376,8 +381,11 @@ button{ font: inherit; background: none; border: none; cursor: pointer; }
 .ice-card:hover{ transform: translateY(-12px) rotate(-1deg); box-shadow: var(--shadow-lg); }
 .ice-art{ width: 100%; max-width: 190px; margin: 0 auto 20px; transition: transform .6s var(--ease); }
 .ice-card:hover .ice-art{ transform: scale(1.08) rotate(4deg); }
-.ice-art.is-photo{ aspect-ratio: 1; border-radius: 50%; overflow: hidden; box-shadow: var(--shadow-sm); }
-.ice-art.is-photo img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+.ice-art.is-photo{
+  aspect-ratio: 1; border-radius: 50%; overflow: hidden; box-shadow: var(--shadow-md);
+  padding: 6px; background: var(--cream); border: 3px solid var(--gold);
+}
+.ice-art.is-photo img{ width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 50%; }
 .ice-card h3{ font-size: 1.12rem; margin-bottom: 8px; text-align: center; }
 .ice-card p{ color: var(--ink-soft); font-size: .92rem; text-align: center; }
 
