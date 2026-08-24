@@ -143,9 +143,13 @@ button{ font: inherit; background: none; border: none; cursor: pointer; }
 .header-inner{ display: flex; align-items: center; justify-content: space-between; width: 100%; }
 
 .brand{ display: flex; align-items: center; gap: 12px; }
-.brand-mark{ flex-shrink: 0; display: flex; width: 46px; height: 46px; transition: width .4s var(--ease), height .4s var(--ease); }
+.brand-mark{
+  flex-shrink: 0; display: flex; width: 64px; height: 64px;
+  filter: drop-shadow(0 3px 8px rgba(58,42,32,.22));
+  transition: width .4s var(--ease), height .4s var(--ease);
+}
 .brand-mark img{ width: 100%; height: 100%; object-fit: contain; }
-.site-header.scrolled .brand-mark{ width: 40px; height: 40px; }
+.site-header.scrolled .brand-mark{ width: 52px; height: 52px; }
 .brand-text{ display: flex; flex-direction: column; line-height: 1.2; }
 .brand-text strong{ font-family: var(--font-display); font-size: 1.12rem; color: var(--espresso); }
 .brand-text em{ font-style: normal; font-size: .68rem; letter-spacing: .06em; color: var(--ink-soft); text-transform: uppercase; }
